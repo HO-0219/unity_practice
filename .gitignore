@@ -1,0 +1,39 @@
+# Unity 기본 캐시/임시/출력 파일
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+MemoryCaptures/
+
+# 사용자 설정
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# VSCode
+.vscode/
+
+# Rider
+.idea/
+
+# OS 임시 파일
+.DS_Store
+Thumbs.db
+
+# 빌드 산출물
+*.apk
+*.aab
+*.ipa
+
+# 기타
+sysinfo.txt
+

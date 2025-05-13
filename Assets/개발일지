@@ -1,0 +1,64 @@
+ rigidbody <- 모든 물리적 효과에 따른 옵션
+ collider <- 히트박스 
+
+ hierachy
+ 자식 오브젝트로 설정
+
+ order in layer 
+ 레이어 층
+ 높을수록 먼저 앞으로 나옴
+
+ rigidbody를 이용한 업데이트
+ 즉 물리업데이트는
+ fixedupdate구문을 사용
+
+1. AddForce 해당 방향으로 힘을 줌
+rigid.AddForce(inputVec);
+2. Velocity 속도
+rigid.Velocity = inputVec;
+3. MovePosition (텔레포트)
+rigid.MovePosition(rigid.position + inputVec);
+
+FeltaTime = update에서 의 시간
+fixedDeltaTime = FixedUpdate에서 의 시간
+
+키 입력을 받을떄 
+Input.GetAxis 와 Input.GetAxisRaw 가 존재
+raw는 딱딱 끊어지는 보정이 없는것  raw가 없는건 약간의 보정이 있어 살짝 미끌어지는 느낌
+
+void LateUpdate() <- 프레임이 종료 되기 전에 실행되는 생명주기 함수 
+
+SpriteRenderer <- 을 통해서 좌우 반전을 할 수 있음
+  void LateUpdate()
+    {
+        if(inputVec.x != 0 ){
+            spriter.flipX = inputVec.x < 0;
+        }
+    }
+
+2D 의 경우 연속되는 모션을 한번에 묶어서 오브젝트에 올려 놓으면 자동적으로 
+애니메이션 컨트롤러가 제작됨 
+
+애니메이션의 경우 특정 값에 맞게 행동하는걸 만들 수 있음 
+파라미터추가를 통해 speed 라는 파라미터를 만들고 키 입력에 따른 이동한다라는 것을 받고
+anim.SetFloat("Speed", inputVec.magnitude); <- 으로 사용하여 이동한다 라는 애니메이션을 작성 할 수 있음 
+
+그리고 기본 적으로 exit, anystate ,entry가 존재하며 
+any <- dead 와 지속적으로 연결
+entry <- 이동 관련된 것들과 연결 
+이렇게 하나의 애니메이션일 제작이 된 경우 
+재활용하여 Animator Override Controller로 사용 가능 
+
+https://www.youtube.com/watch?v=SNjgew0VhHY&list=PLO-mt5Iu5TeZF8xMHqtT_DhAPKmjF6i3x&index=6
+여기부터 시작하면 됨
+
+
+타일맵 제작시 파일 탈레트 생성 이후 
+project 공간에서 생성 타일, 2d , 룰타일 
+선택해서 랜덤으로 생성 되게 만들 수 있음 
+또한 타일맵에 tilemapcollider , composite collider사용
+
+게임매니저 파일에서 중요한 데이터들을 관리하고 
+필요로하는 곳에서는 게임매니저에게 받아 와서 처리 하게 만들어야 함 
+
+싱글톤의 경우 한화면에서 진행 하지 않는 여러 화면들을 사용할때 사용함 

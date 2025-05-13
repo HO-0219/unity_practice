@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 126458212e0b54c60a5a988aa9cf5421
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 50
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Hakgyoansim Dunggeunmiso TTF
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ac01df5e0a52c8e4592c487331b786d9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
